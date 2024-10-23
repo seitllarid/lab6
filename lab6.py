@@ -12,6 +12,14 @@ def main_menu():
     option= int(input("Please enter an option:"))
     return option
 
+# Decode(), Landen Parke
+def decode(password):
+    decoded_password = ""
+    for number in str(password):
+        decoded_password += str(int(number)-3)
+    return decoded_password
+
+
 password_storage=""
 
 while True:
@@ -30,8 +38,9 @@ while True:
         password_storage=encode(password_input)
         print("Your password had been encoded and stored!\n")
     elif choice ==2:
-        #TODO choice 2
-        pass
+        # Decode option, Landen Parke
+        print(f"The encoded password is {password_storage}, and the original password is {decode(password_storage)}")
+
     elif choice ==3:
         break
 
